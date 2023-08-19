@@ -1,6 +1,6 @@
 package org.example;
 
-import com.google.common.annotations.VisibleForTesting;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
-public class Main {
+public class SaucedemoApp {
 
     public static WebDriver driver;
     public static void main(String[] args) {
@@ -48,7 +48,14 @@ public class Main {
         System.out.println(driver.getCurrentUrl());
         System.out.println(driver.getTitle());
 //		 driver.close();//close current window
-        driver.quit();//close all window open by automation.
+//        driver.quit();//close all window open by automation.
+        driver.findElement(By.id("login-button")).click();
 
     }
+//    @Test
+//    public void ma2(){
+//        driver.findElement(By.name("user-name")).sendKeys("standard_user");
+//        driver.findElement(By.name("password")).sendKeys("secret_sauce");
+//        driver.findElement(By.id("login-button")).click();
+//    }
 }
